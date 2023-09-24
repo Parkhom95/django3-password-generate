@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<!--<link rel="stylesheet" href="/main/static/main/css/style.css">-->
+    <title>Генератор паролей</title>
+</head>
+<body style="background-color: #f1bdbd;">
+    <div class="container text-center">
+        <h1>Генератор паролей</h1>
+        <form action="{% url 'password' %}">
+            <p style="margin: 40px; font-weight: bold">Выберите длину пароля</p>
+            <select name="length" class="form-select" aria-label="Default select example" style="background-color: rgba(246,167,167,0.36)">
+                <option value="6">6 символов</option>
+                <option value="7">7 символов</option>
+                <option value="8">8 символов</option>
+                <option value="9">9 символов</option>
+                <option value="10">10 символов</option>
+                <option value="11">11 символов</option>
+                <option value="12" selected="selected">12 символов</option>
+                <option value="13">13 символов</option>
+                <option value="14">14 символов</option>
+            </select>
+            <div class="parametr" style="text-align: left; width: 200px; display: block; margin: 20px auto">
+                <input type="checkbox" name="uppercase" > Заглавные
+                <br>
+                <input type="checkbox" name="numbers" > Цифры
+                <br>
+                <input type="checkbox" name="special" > Специальные символы
+            </div>
+<!--            <button type="submit" value="btn btn-danger">Сгенерировать пароль</button>-->
+            <input type="submit" value="Сгенерировать пароль" class="btn btn-primary">
+
+        </form>
+
+        <a href="{% url 'about' %}"><button class="btn btn-success" style="margin-top: 20px;">О Нас</button></a>
+    </div>
+</body>
+</html>
